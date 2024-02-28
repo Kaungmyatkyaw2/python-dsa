@@ -1,1 +1,1 @@
-## This is repo that have code for python data structure and alogirthm
+## Code implementation for Data Strucutre and Algorithm using python
