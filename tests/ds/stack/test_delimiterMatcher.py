@@ -15,3 +15,21 @@ def testSimpleNegativeCase1():
 def testSimpleNegativeCase2():
     algo = DelimiterMatch("ca]")
     assert algo.isValid() == False
+
+
+def testComplexCase1():
+    algo = DelimiterMatch("a{b[c]d}e")
+    assert algo.isValid() == True
+
+def testComplexCase2():
+    algo = DelimiterMatch("a{b(c]d}e")
+    assert algo.isValid() == False
+
+def testComplexCase3():
+    algo = DelimiterMatch("a[b{c}d]e}")
+    assert algo.isValid() == False
+
+
+def testComplexCase1():
+    algo = DelimiterMatch("{a[(b<c>)d]e}")
+    assert algo.isValid() == True

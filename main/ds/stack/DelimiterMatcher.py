@@ -1,6 +1,9 @@
 from main.ds.stack.Stack import Stack
 
-diction = {"[": "]"}
+diction = {"[": "]", "{": "}", "(": ")", "<": ">"}
+
+openingChars = list(diction.keys())
+closingChars = list(diction.values())
 
 
 class DelimiterMatch:
@@ -32,10 +35,10 @@ class DelimiterMatch:
         return diction[openChar]
 
     def isOpening(self, char):
-        return char == "["
+        return char in openingChars
 
     def isClosing(self, char):
-        return char == "]"
+        return char in closingChars
 
     def isProperlyMatch(self, openChar, closingChar):
         closing = self.getClosingChar(openChar)
