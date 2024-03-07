@@ -52,7 +52,7 @@ class PostfixTransformer:
                 elif self.isLowerPre(char, opStack.peek()):
                     while (
                         not opStack.isEmpty()
-                        and not opStack.peek() == "("
+                        and  opStack.peek() != "("
                         and not self.isLowerPre(opStack.peek(), char)
                     ):
                         postFix += opStack.pop()
@@ -64,7 +64,7 @@ class PostfixTransformer:
             elif char == "(":
                 opStack.push(char)
             elif char == ")":
-                while not opStack.isEmpty() and not opStack.peek() == "(":
+                while not opStack.isEmpty() and opStack.peek() != "(":
                     postFix += opStack.pop()
                 if not opStack.isEmpty():
                     opStack.pop()
