@@ -6,16 +6,29 @@ class PriorityQueue(CircularQueue):
     def __init__(self, maxSize):
         super().__init__(maxSize)
 
+    def getNextLessIndex(self, index):
+        nextIndex = index - 1
+        if nextIndex < 0:
+            return nextIndex + self.maxSize
+
+        return nextIndex
+
     def enque(self, item):
         if not self.isFull():
             super().enque(item)
             if self.noOfItems > 1:
                 index = self.rear
-                while self.items[index] > self.items[index - 1] and index > 0:
-                    [self.items[index - 1], self.items[index]] = [
+                comparison = 0
+                while (
+                    comparison < self.noOfItems - 1
+                    and self.items[index] > self.items[self.getNextLessIndex(index)]
+                ):
+                    nextIndex = self.getNextLessIndex(index)  # 0
+                    [self.items[nextIndex], self.items[index]] = [
                         self.items[index],
-                        self.items[index - 1],
+                        self.items[nextIndex],
                     ]
-                    index -= 1
+                    index = nextIndex
+                    comparison += 1
         else:
             raise QueueOverflowException("Queue Overflow.")

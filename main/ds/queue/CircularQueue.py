@@ -25,7 +25,9 @@ class CircularQueue(ArrayBasedQueue):
         if not self.isEmpty():
             self.front = (self.front + 1) % self.maxSize
             self.noOfItems -= 1
-            return self.items[self.front]
+            showItem = self.items[self.front]
+            # self.items[self.front] = None
+            return showItem
 
         else:
             raise QueueUnderflowException("Queue underflow.")
