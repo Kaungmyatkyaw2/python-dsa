@@ -77,6 +77,6 @@ class LinkedListIterator:
         if self.currentNode != None:
             temp = self.currentNode
             self.currentNode = self.currentNode.next
-            return temp.value
+            return temp
 
         return None

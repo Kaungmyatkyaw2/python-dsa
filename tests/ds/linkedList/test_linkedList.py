@@ -28,10 +28,10 @@ def testIterator():
     linkedList.insertLast(three)
 
     iterator = LinkedListIterator(linkedList)
-    assert iterator.next() == 1
+    assert iterator.next() == one
     assert iterator.hasNext() == True
-    assert iterator.next() == 2
-    assert iterator.next() == 3
+    assert iterator.next() == two
+    assert iterator.next() == three
     assert iterator.hasNext() == False
 
     # iterator2 = LinkedListIterator(linkedList)
@@ -47,7 +47,7 @@ def testInsertFirstEmptyCase():
 
     iterator = LinkedListIterator(linkedList)
 
-    assert iterator.next() == 10
+    assert iterator.next() == first
 
 
 def testInsertFirstManyCase():
@@ -61,9 +61,9 @@ def testInsertFirstManyCase():
 
     iterator = LinkedListIterator(linkedList)
 
-    assert iterator.next() == 30
-    assert iterator.next() == 20
-    assert iterator.next() == 10
+    assert iterator.next() == third
+    assert iterator.next() == second
+    assert iterator.next() == first
 
 
 def testInsertFirstAndLastManyCase():
@@ -79,10 +79,10 @@ def testInsertFirstAndLastManyCase():
 
     iterator = LinkedListIterator(linkedList)
 
-    assert iterator.next() == 20
-    assert iterator.next() == 10
-    assert iterator.next() == 30
-    assert iterator.next() == 40
+    assert iterator.next() == second
+    assert iterator.next() == first
+    assert iterator.next() == third
+    assert iterator.next() == fourth
 
 
 def testDeleteFirst():
@@ -104,7 +104,7 @@ def testDeleteFirstMany():
     linkedList.deleteFirst()
 
     iterator = LinkedListIterator(linkedList)
-    assert iterator.next() == first.value
+    assert iterator.next() == first
     assert iterator.hasNext() == False
 
 
@@ -118,7 +118,7 @@ def testDeleteNodeFirst():
     linkedList.delete(first)
 
     iterator = LinkedListIterator(linkedList)
-    assert iterator.next() == second.value
+    assert iterator.next() == second
     assert iterator.hasNext() == False
 
 
@@ -133,7 +133,7 @@ def testDeleteNodeFirst():
     linkedList.delete(second)
 
     iterator = LinkedListIterator(linkedList)
-    assert iterator.next() == first.value
+    assert iterator.next() == first
     assert iterator.hasNext() == False
 
 
@@ -151,7 +151,7 @@ def testDeleteNodeMany():
     linkedList.delete(third)
 
     iterator = LinkedListIterator(linkedList)
-    assert iterator.next() == first.value
-    assert iterator.next() == second.value
-    assert iterator.next() == fourth.value
+    assert iterator.next() == first
+    assert iterator.next() == second
+    assert iterator.next() == fourth
     assert iterator.hasNext() == False
