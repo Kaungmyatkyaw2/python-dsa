@@ -1,7 +1,7 @@
 # Making Preorder without using lang's method stack (use our own stack)
 
-#Check TreeTraversel.py in recursion folder there is some importing Stack err in that file so I implemented
-# Traversel algo using stack in this file ( I don't know how to solve that import err cause I am lack of python knowledge)
+#  TreeTraversel.py in recursion folder there is some importing Stack err in that file so I implemented
+# Traversel algo using stack in this file ( I don't know how to solve that import err cause I am lack of python knowledge and I also don't wanna spend many time on python err)
 
 from TreeNode import TreeNode
 from Stack import Stack
